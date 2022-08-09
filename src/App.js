@@ -15,7 +15,7 @@ function App() {
           exact
           path="/"
           element={
-            <div className="App">
+            <div className="App container">
               <Navbar />
               <Home />
               <Footer />
