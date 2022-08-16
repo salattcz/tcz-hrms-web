@@ -6,7 +6,6 @@ import Home from './components/Home/Home';
 import Footer from './components/Footer/Footer';
 import About from './pages/About/About';
 import ContactUs from './pages/ContactUs/ContactUs';
-
 function App() {
   return (
     <BrowserRouter>
