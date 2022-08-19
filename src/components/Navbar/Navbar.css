@@ -1,4 +1,4 @@
-<<<<<<< Updated upstream
+
 media="screen">
 *{
     margin: 0;
@@ -17,8 +17,7 @@ media="screen">
 }
 .collapse{
   margin-left: 50px;
-=======
-
+}
 .logo{
   margin-left: 5%;
    width: 3rem;
@@ -38,12 +37,10 @@ media="screen">
 }
 .collapse{
    margin-left: 50px;
->>>>>>> Stashed changes
 }
 #menu__toggle {
   opacity: 0;
 }
-<<<<<<< Updated upstream
 .logo{
   margin-left: 5%;
   width: 3rem;
@@ -59,7 +56,6 @@ header{
   height: auto;
   width: 100vw;
 }
-=======
  
 #menu__toggle:checked ~ .menu__btn > span {
   transform: rotate(45deg);
@@ -141,5 +137,4 @@ header{
   background-color: #CFD8DC;
 }
 
-    
->>>>>>> Stashed changes
+  

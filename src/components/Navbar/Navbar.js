@@ -1,10 +1,9 @@
 import React from 'react';
-<<<<<<< Updated upstream
-=======
-import { Link } from 'react-router-dom';
->>>>>>> Stashed changes
+import { Link, Routes, Route } from 'react-router-dom';
 import logo from './logo.jpg';
 import './Navbar.css';
+import Login from '../Login/login';
+// import Hamburgerpages from '../Hamburgerpages/button';
 import {
   FaAtlassian,
   FaBlackberry,
@@ -16,31 +15,26 @@ import {
 } from 'react-icons/fa';
 function Navbar() {
   return (
-    <header>
-<<<<<<< Updated upstream
+    <div>
       <nav className="navbar navbar-expand-lg navbar-dark">
-        <div className="container-fluid">
-          <a className="navbar-brand" href="#">
-            HRMS
-          </a>
-          <img className="logo" src={logo} alt="this is logo image" />
-=======
-      <nav className="navbar navbar-expand-lg navbar-dark container ">
         <div className="hamburger-menu ">
           <input id="menu__toggle" type="checkbox" />
           <label className="menu__btn" htmlFor="menu__toggle">
             <span></span>
           </label>
-
           <ul className="menu__box">
             <li>
+              {/* <link className="menu__item" to="/button">
+                <FaAtlassian /> Button-1
+              </link>
+              <Routes>
+                <Route path="/button" component={<Hamburgerpages />}></Route>
+              </Routes> */}
               <a className="menu__item" href="#">
                 <FaAtlassian /> Button-1
-                {/* <link className="menu__item" to={'/pages/Hamburger pages/button-1'}>
-                <FaAtlassian /> Button-1
-              </link> */}
               </a>
             </li>
+
             <li>
               <a className="menu__item" href="#">
                 <FaBlackberry /> Button-2
@@ -76,9 +70,8 @@ function Navbar() {
         <div className="container-fluid">
           <img className="logo" src={logo} alt="this is logo image" />
           <a className="navbar-brand" href="#">
-            Name
+            HRMS
           </a>
->>>>>>> Stashed changes
           <button
             className="navbar-toggler"
             type="button"
@@ -94,10 +87,7 @@ function Navbar() {
               <li className="nav-item">
                 <a className="nav-link active" href="#">
                   Home
-<<<<<<< Updated upstream
                   <span className="visually-hidden">(current)</span>
-=======
->>>>>>> Stashed changes
                 </a>
               </li>
               <li className="nav-item">
@@ -111,44 +101,35 @@ function Navbar() {
                 </a>
               </li>
               <li className="nav-item">
-<<<<<<< Updated upstream
-                <a className="nav-link active " href="#">
-=======
                 <a className="nav-link active" href="#">
->>>>>>> Stashed changes
                   Button-3
                 </a>
               </li>
             </ul>
+
             <form className="d-flex">
-<<<<<<< Updated upstream
-              <input className="form-control me-sm-2" type="text" placeholder="Search"></input>
-              <button className="btn btn-secondary my-2 my-sm-0" type="submit">
-=======
               <div className="collapse navbar-collapse" id="navbarColor01">
                 <ul className="navbar-nav me-auto">
                   <li className="nav">
-                    <Link className="nav-link active" to={'/pages/login/login'}>
+                    <Link className="nav-link active" to="/login">
                       login
                     </Link>
                   </li>
-                  {/* <li className="nav">
-                    <a className="nav-link active" href="#">
-                      logout
-                    </a>
-                  </li> */}
                 </ul>
+                <Routes>
+                  <Route path="/login" component={<Login />}></Route>
+                </Routes>
               </div>
+
               <input className="form-control me-sm-2" type="text" placeholder="Search"></input>
               <button className="btn btn-secondary my-2 my-sm-0 btn-dark" type="submit">
->>>>>>> Stashed changes
                 Search
               </button>
             </form>
           </div>
         </div>
       </nav>
-    </header>
+    </div>
   );
 }
 

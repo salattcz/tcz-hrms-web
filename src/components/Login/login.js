@@ -1,12 +1,13 @@
 import React from 'react';
 import './login.css';
-
-function login() {
+import { Link, Routes, Route } from 'react-router-dom';
+import Registration from '../Registration/registration';
+function Login() {
   return (
     <div className="body">
       <div className="login">
         <h4>Login</h4>
-        <form>
+        <form className="Form">
           <div className="text_area">
             <input
               type="text"
@@ -34,14 +35,17 @@ function login() {
               className="text_input"
             />
           </div>
-          <input type="submit" value="LOGIN" className="btn" />
+          <input type="submit" value="LOGIN" className="button" />
         </form>
-        <a className="link" href="#">
+        <Link className="link" to="/registration">
           Sign Up
-        </a>
+        </Link>
+        <Routes>
+          <Route path="/registration" component={<Registration />}></Route>
+        </Routes>
       </div>
     </div>
   );
 }
 
-export default login;
+export default Login;

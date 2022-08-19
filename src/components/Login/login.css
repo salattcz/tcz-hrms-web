@@ -12,7 +12,7 @@ h4{
     margin-bottom: 2rem;
 }
 
-form{
+.form{
     display: inline-block;
     align-items: center;
     height: 270px;
@@ -36,7 +36,7 @@ form{
     width: 80%;
 }
 
-.btn{
+.button{
     margin-top: 28px;
     width: 165px;
     height: 60px;
