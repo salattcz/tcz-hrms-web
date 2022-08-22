@@ -29,15 +29,14 @@ function Registration() {
               <input type="text" placeholder="Subscription period" required></input>
             </div>
             <div className="box">
-              <span className="details">Company logo</span>
+              {/* <span className="details">Company logo</span> */}
               <input type="file" placeholder="upload here" required></input>
             </div>
           </div>
         </form>
       </div>
-
       <div>
-        <input type="submit" value="Register" className="button"></input>
+        <input type="submit" value="Register" className="butn"></input>
       </div>
     </div>
   );

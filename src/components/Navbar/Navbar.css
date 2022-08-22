@@ -1,10 +1,10 @@
 
-media="screen">
+/* media="screen">
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
+  } */
 .navbar-brand{
   margin-left: 7%;
 }
@@ -131,7 +131,7 @@ header{
   font-weight: 600;
   text-decoration: none;
   transition-duration: .25s;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 .menu__item:hover {
   background-color: #CFD8DC;

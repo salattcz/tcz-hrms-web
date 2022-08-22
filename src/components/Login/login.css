@@ -1,23 +1,30 @@
 .body{
-    background: linear-gradient(135deg, #1B8AF1, #B58DED);
-    height: 100vh;
+    background: linear-gradient(10deg, #878fea, #abdded);
+    height: 110vh;
     width: 100%;
     text-align: center;
 }
 
 h4{
-    font-family: 'Segoe UI', bold;
+    font-family: 'sans-serif', bold;
     font-size: 35px;
-    margin-top: 4rem;
+    margin-top: 1rem;
     margin-bottom: 2rem;
+    display: block;
+}
+h4:hover{
+    background-color: aqua;
+    
 }
 
-.form{
+.Form{
     display: inline-block;
     align-items: center;
-    height: 270px;
+    height: 570px;
     width: 350px;
-    margin-bottom: 170px;
+    margin-bottom: 10px;
+    /* background-color: red; */
+   
 }
 .text_area{
     align-content: center;
@@ -25,7 +32,8 @@ h4{
     margin-bottom: 35px;
     width: 100%;
     height: 64px;
-    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2), 0 0 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 0 8px 0 rgba(102, 228, 242, 0.2), 0 0 20px 0 rgba(102, 245, 245, 0.19);
+    /* background-color: red; */
 }
 
 .text_input{
@@ -34,6 +42,7 @@ h4{
     font-size: 20px;
     border: none;
     width: 80%;
+    
 }
 
 .button{
@@ -41,12 +50,12 @@ h4{
     width: 165px;
     height: 60px;
     border-radius: 30px;
-    background: #B58DED;
+    background: black;
     border: none;
     font-family: 'Montserrat';
     font-size: 20px;
     color: #FFFFFF;
-    box-shadow: 0 4px 8px 0 rgba(181, 141, 237, 0.7), 0 6px 20px 0 rgba(181, 141, 237, 0.9);
+    /* box-shadow: 0 4px 8px 0 rgba(181, 141, 237, 0.7), 0 6px 20px 0 rgba(181, 141, 237, 0.9); */
     cursor: pointer;
 }
 
@@ -55,16 +64,33 @@ h4{
     background: #FFFFFF;
     width: 434px;
     height: 700px;
-    margin-top: 10%;
+    margin-top: 5%;
     border-radius: 22px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
 
 .link{
     color: #0E4579;
     font-family: 'Montserrat light';
-    font-size: 18px;
+    font-size: 1.4rem;
     cursor: pointer;
     display: block;
     text-decoration: none;
+    
+   
+}
+.item{
+    position: relative;
+    margin-right: 12rem;
+    margin-bottom: 0.7rem;
+}
+.item2{
+    position: relative;
+    margin-right: 17rem;
+    margin-bottom: 0.7rem;
+}
+.item3{
+    position: relative;
+    margin-right: 15rem;
+    margin-bottom: 0.7rem;
 }

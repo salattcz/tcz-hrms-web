@@ -7,7 +7,7 @@ import About from './pages/About/About';
 import ContactUs from './pages/ContactUs/ContactUs';
 import Login from './components/Login/login';
 import Registration from './components/Registration/registration';
-import Hamburgerpages from './components/Hamburgerpages/button';
+import Ham from './components/Ham/button1';
 function App() {
   return (
     <Routes>
@@ -26,7 +26,7 @@ function App() {
       <Route exact path="/login" element={<Login />} />
       <Route exact path="/about" element={<About />} />
       <Route exact path="/contactUs" element={<ContactUs />} />
-      <Route exact path="/button" element={<Hamburgerpages />} />
+      <Route exact path="/button1" element={<Ham />} />
     </Routes>
   );
 }

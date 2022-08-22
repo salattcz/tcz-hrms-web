@@ -3,7 +3,7 @@ import { Link, Routes, Route } from 'react-router-dom';
 import logo from './logo.jpg';
 import './Navbar.css';
 import Login from '../Login/login';
-// import Hamburgerpages from '../Hamburgerpages/button';
+import Ham from '../Ham/button1';
 import {
   FaAtlassian,
   FaBlackberry,
@@ -24,21 +24,27 @@ function Navbar() {
           </label>
           <ul className="menu__box">
             <li>
-              {/* <link className="menu__item" to="/button">
+              <Link className="menu__item" to="/button1">
                 <FaAtlassian /> Button-1
-              </link>
+              </Link>
               <Routes>
-                <Route path="/button" component={<Hamburgerpages />}></Route>
-              </Routes> */}
-              <a className="menu__item" href="#">
+                <Route path="/button1" component={<Ham />}></Route>
+              </Routes>
+              {/* <a className="menu__item" href="#">
                 <FaAtlassian /> Button-1
-              </a>
+              </a> */}
             </li>
 
             <li>
-              <a className="menu__item" href="#">
+              <Link className="menu__item" to="/button2">
                 <FaBlackberry /> Button-2
-              </a>
+              </Link>
+              <Routes>
+                <Route path="/button2" component={<Ham />}></Route>
+              </Routes>
+              {/* <a className="menu__item" href="#">
+                <FaBlackberry /> Button-2
+              </a> */}
             </li>
             <li>
               <a className="menu__item" href="#">
