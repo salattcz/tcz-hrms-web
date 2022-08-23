@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
-function button1() {
+function button3() {
   return (
     <Routes>
       <Route
@@ -10,7 +10,7 @@ function button1() {
         element={
           <div className="App container">
             <Navbar />
-            <h2>button1</h2>
+            <h2>button3</h2>
             <Footer />
           </div>
         }></Route>
@@ -18,4 +18,4 @@ function button1() {
   );
 }
 
-export default button1;
+export default button3;

@@ -4,6 +4,12 @@ import logo from './logo.jpg';
 import './Navbar.css';
 import Login from '../Login/login';
 import Ham from '../Ham/button1';
+import Button2 from '../Button2/button2';
+import Button3 from '../Button3/button3';
+import Button4 from '../Button4/button4';
+import Button5 from '../Button5/button5';
+import Button6 from '../Button6/button6.js';
+import Button7 from '../Button7/button7';
 import {
   FaAtlassian,
   FaBlackberry,
@@ -30,9 +36,6 @@ function Navbar() {
               <Routes>
                 <Route path="/button1" component={<Ham />}></Route>
               </Routes>
-              {/* <a className="menu__item" href="#">
-                <FaAtlassian /> Button-1
-              </a> */}
             </li>
 
             <li>
@@ -40,36 +43,48 @@ function Navbar() {
                 <FaBlackberry /> Button-2
               </Link>
               <Routes>
-                <Route path="/button2" component={<Ham />}></Route>
+                <Route path="/button2" component={<Button2 />}></Route>
               </Routes>
-              {/* <a className="menu__item" href="#">
-                <FaBlackberry /> Button-2
-              </a> */}
             </li>
             <li>
-              <a className="menu__item" href="#">
+              <Link className="menu__item" to="/button3">
                 <FaCloudflare /> Button-3
-              </a>
+              </Link>
+              <Routes>
+                <Route path="/button3" component={<Button3 />}></Route>
+              </Routes>
             </li>
             <li>
-              <a className="menu__item" href="#">
+              <Link className="menu__item" to="/button4">
                 <FaDrupal /> Button-4
-              </a>
+              </Link>
+              <Routes>
+                <Route path="/button4" component={<Button4 />}></Route>
+              </Routes>
             </li>
             <li>
-              <a className="menu__item" href="#">
+              <Link className="menu__item" to="/button5">
                 <FaGoogleWallet /> Button-5
-              </a>
+              </Link>
+              <Routes>
+                <Route path="/button5" component={<Button5 />}></Route>
+              </Routes>
             </li>
             <li>
-              <a className="menu__item" href="#">
+              <Link className="menu__item" to="/button6">
                 <FaJoomla /> Button-6
-              </a>
+              </Link>
+              <Routes>
+                <Route path="/button6" component={<Button6 />}></Route>
+              </Routes>
             </li>
             <li>
-              <a className="menu__item" href="#">
+              <Link className="menu__item" to="/button7">
                 <FaMandalorian /> Button-7
-              </a>
+              </Link>
+              <Routes>
+                <Route path="/button7" component={<Button7 />}></Route>
+              </Routes>
             </li>
           </ul>
         </div>

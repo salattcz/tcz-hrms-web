@@ -31,13 +31,13 @@ h4:hover{
     border-radius: 22px;
     margin-bottom: 35px;
     width: 100%;
-    height: 64px;
+    height: 44px;
     box-shadow: 0 0 8px 0 rgba(102, 228, 242, 0.2), 0 0 20px 0 rgba(102, 245, 245, 0.19);
     /* background-color: red; */
 }
 
 .text_input{
-    margin-top: 1.2rem;
+    margin-top: 0.4rem;
     font-family: 'Montserrat regular';
     font-size: 20px;
     border: none;
@@ -49,7 +49,7 @@ h4:hover{
     margin-top: 28px;
     width: 165px;
     height: 60px;
-    border-radius: 30px;
+    border-radius: 10px;
     background: black;
     border: none;
     font-family: 'Montserrat';
