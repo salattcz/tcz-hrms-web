@@ -7,7 +7,7 @@ import About from './pages/About/About';
 import ContactUs from './pages/ContactUs/ContactUs';
 import Login from './components/Login/login';
 import Registration from './components/Registration/registration';
-import Ham from './components/Ham/button1';
+import User from './components/User/userregister';
 import Button2 from './components/Button2/button2';
 import Button3 from './components/Button3/button3';
 import Button4 from './components/Button4/button4';
@@ -34,7 +34,7 @@ function App() {
       <Route exact path="/login" element={<Login />} />
       <Route exact path="/about" element={<About />} />
       <Route exact path="/contactUs" element={<ContactUs />} />
-      <Route exact path="/button1" element={<Ham />} />
+      <Route exact path="/userregister" element={<User />} />
       <Route exact path="/button2" element={<Button2 />} />
       <Route exact path="/button3" element={<Button3 />} />
       <Route exact path="/button4" element={<Button4 />} />
