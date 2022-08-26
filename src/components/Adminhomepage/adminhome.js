@@ -1,15 +1,15 @@
 import React from 'react';
 import { Link, Routes, Route } from 'react-router-dom';
 // import logo from './logo.jpg';
-// import './Navbar.css';
+import './adminhome.css';
 // import Login from '../Login/login';
 import User from '../User/userregister';
-import Button2 from '../Button2/button2';
 import Button3 from '../Button3/button3';
 import Button4 from '../Button4/button4';
 import Button5 from '../Button5/button5';
 import Button6 from '../Button6/button6';
 import Button7 from '../Button7/button7';
+import Bulkadd from '../Bulkadd/bulkadd';
 import {
   FaAtlassian,
   FaBlackberry,
@@ -23,7 +23,7 @@ function Navbar() {
   return (
     <div className="App container">
       <div className="App container">
-        <nav className="navbar navbar-expand-lg navbar-dark">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
           <div className="hamburger-menu ">
             <input id="menu__toggle" type="checkbox" />
             <label className="menu__btn" htmlFor="menu__toggle">
@@ -56,11 +56,11 @@ function Navbar() {
               </li>
 
               <li>
-                <Link className="menu__item" to="/button2">
-                  <FaBlackberry /> Button-2
+                <Link className="menu__item" to="/bulkadd">
+                  <FaBlackberry /> Bulk Add Users
                 </Link>
                 <Routes>
-                  <Route path="/button2" component={<Button2 />}></Route>
+                  <Route path="/bulkadd" component={<Bulkadd />}></Route>
                 </Routes>
               </li>
               <li>
@@ -170,7 +170,7 @@ function Navbar() {
       </div>
 
       <div>
-        <footer className="footer-distributed">
+        <footer className="footer-distributed bg-dark">
           <div className="footer-left">
             <h3>
               <span>HRMS</span>
