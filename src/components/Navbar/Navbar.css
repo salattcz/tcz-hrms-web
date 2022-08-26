@@ -32,8 +32,8 @@
 .nav{
    padding-right:20px;
 }
-.nav-item:hover{
-  background-color: #ed9bd8;
+.nav-item:hover {
+  color: #ed9bd8;
 }
 .collapse{
    margin-left: 50px;
@@ -125,16 +125,17 @@ header{
    display: block;
       /* padding: 12px 24px; */
     
-  color: #333; 
+  color: rgb(84, 20, 59); 
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
   font-weight: 600;
   text-decoration: none;
   transition-duration: .25s;
-  margin-top: 1.5rem;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
 }
 .menu__item:hover {
-  background-color: #CFD8DC;
+  background-color: #e2ebee;
 }
 
   

@@ -1,15 +1,15 @@
 import React from 'react';
-import './login.css';
+import './adminlogin.css';
 import { Link, Routes, Route } from 'react-router-dom';
-import Registration from '../Registration/registration';
-import Admin from '../Admin/adminlogin';
+import Adminhomepage from '../Adminhomepage/adminhome';
+// import { Link, Routes, Route } from 'react-router-dom';
 function Login() {
   return (
     <div className="body">
       <div className="login">
-        <h4>Login</h4>
+        <h4>Admin Login</h4>
         <form className="Form">
-          <label className="item">
+          {/* <label className="item">
             <b>Company Email</b>
           </label>
           <div className="text_area">
@@ -20,7 +20,7 @@ function Login() {
               // placeholder="Company Email"
               className="text_input"
             />
-          </div>
+          </div> */}
           <label className="item2">
             <b>Email</b>
           </label>
@@ -45,18 +45,11 @@ function Login() {
               className="text_input"
             />
           </div>
-          <input type="submit" value="LOGIN" className="button" />
-          <Link className="link" to="/registration">
-            Register
+          <Link className="link" to="/adminhome">
+            <input type="submit" value="LOGIN" className="button" />
           </Link>
           <Routes>
-            <Route path="/registration" component={<Registration />}></Route>
-          </Routes>
-          <Link className="link" to="/adminlogin">
-            Admin Login
-          </Link>
-          <Routes>
-            <Route path="/adminlogin" component={<Admin />}></Route>
+            <Route path="/adminhome" component={<Adminhomepage />}></Route>
           </Routes>
         </form>
       </div>
