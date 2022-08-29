@@ -1,7 +1,8 @@
 import React from 'react';
 import './adminlogin.css';
 import { Link, Routes, Route } from 'react-router-dom';
-import Adminhomepage from '../Adminhomepage/adminhome';
+// import Adminhomepage from '../Adminhomepage/adminhome';
+import Admin from '../Admin/Admin';
 // import { Link, Routes, Route } from 'react-router-dom';
 function Login() {
   return (
@@ -45,11 +46,11 @@ function Login() {
               className="text_input"
             />
           </div>
-          <Link className="link" to="/adminhome">
+          <Link className="link" to="/Admin">
             <input type="submit" value="LOGIN" className="button" />
           </Link>
           <Routes>
-            <Route path="/adminhome" component={<Adminhomepage />}></Route>
+            <Route path="/Admin" component={<Admin />}></Route>
           </Routes>
         </form>
       </div>

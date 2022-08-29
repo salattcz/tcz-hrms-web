@@ -177,4 +177,4 @@ function userregister() {
   );
 }
 
-export default userregister;
+export default Registration;

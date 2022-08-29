@@ -1,7 +1,8 @@
 import React from 'react';
+import './bulkadd.css';
 import { Routes, Route } from 'react-router-dom';
-import Navbar from '../Navbar/Navbar';
-import Footer from '../Footer/Footer';
+import Adminhomepage from '../Adminhomepage/adminhome';
+import Adminfooter from '../Adminfooter/adminfooter';
 function bulkadd() {
   return (
     <Routes>
@@ -9,9 +10,9 @@ function bulkadd() {
         path="*"
         element={
           <div className="App container">
-            <Navbar />
+            <Adminhomepage />
             <div className="col-md-12 mb-4 pb-2">
-              <div className="form-outline">
+              <div id="form-outline">
                 <label className="form-label" htmlFor="upload">
                   Bulk upload
                 </label>
@@ -23,7 +24,7 @@ function bulkadd() {
                   required
                 />
               </div>
-              <Footer />
+              <Adminfooter />
             </div>
           </div>
         }></Route>
