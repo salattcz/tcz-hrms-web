@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { companyRegisterAPI } from '../../helpers/CompanyAPIs';
 import { addBulkUsers } from '../../helpers/UsersAPIs';
-// import { addBulkUsers } from '../../helpers/UsersAPIs';
 import './registration.css';
 
 function userregister() {
@@ -153,10 +152,6 @@ function userregister() {
                         required
                         onChange={handleFile}
                       />
-                      <br />
-                      {/* <button className="btn btn-dark" onClick={handleFileSubmit}>
-                        Go
-                      </button> */}
                     </div>
                   </div>
                 </div>
@@ -177,4 +172,4 @@ function userregister() {
   );
 }
 
-export default Registration;
+export default userregister;
