@@ -6,3 +6,8 @@ export const addBulkUsers = async (formData) => {
   const res = await base.post('/user/add-users', formData);
   return res;
 };
+
+export const adminLoginApi = async (loginData) => {
+  const res = await base.post('/user/admin-login', loginData);
+  return res;
+};
