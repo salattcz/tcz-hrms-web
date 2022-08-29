@@ -67,9 +67,9 @@ function userregister() {
               <h3 className="mb-4 pb-2 pb-md-0 mb-md-5">Register</h3>
               <form>
                 <div className="row">
-                  <div className="col-md-12 mb-12">
+                  <div className="col-md-12 mb-12 pb-2">
                     <div className="form-outline">
-                      <label className="form-label" htmlFor="firstName">
+                      <label id="form-label" htmlFor="firstName">
                         Company Name
                       </label>
                       <input
@@ -81,8 +81,6 @@ function userregister() {
                       />
                     </div>
                   </div>
-                </div>
-                <div className="row">
                   <div className="col-md-12 mb-4 pb-2">
                     <div className="form-outline">
                       <label className="form-label" htmlFor="emailAddress">
@@ -100,7 +98,7 @@ function userregister() {
                   <div className="col-md-12 mb-4 pb-2">
                     <div className="form-outline">
                       <label className="form-label" htmlFor="phoneNumber">
-                        Company contact
+                        Company Contact
                       </label>
                       <input
                         type="tel"
@@ -114,7 +112,7 @@ function userregister() {
                   <div className="col-md-12 mb-4 pb-2">
                     <div className="form-outline">
                       <label className="form-label" htmlFor="phoneNumber">
-                        company Description
+                        Company Description
                       </label>
                       <input
                         type="tel"
