@@ -48,12 +48,14 @@ function userregister() {
       subscPeriod: '1month',
       subscType: 'temporary'
     }).then(
-      addBulkUsers(formData).then((res) => {
-        if (res.status === 200) {
-          window.alert('Company registered successfully!');
-          navigate('/');
-        }
-      })
+      file !== undefined
+        ? addBulkUsers(formData).then((res) => {
+            if (res.status === 200) {
+              window.alert('Company registered successfully!');
+              navigate('/');
+            }
+          })
+        : (window.alert('Company registered successfully!'), navigate('/'))
     );
   };
 
