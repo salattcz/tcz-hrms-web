@@ -1,6 +1,6 @@
 import React from 'react';
 import './registration.css';
-function userregister() {
+function Registration() {
   return (
     <div className="container py-5 h-100">
       <div className="row justify-content-center align-items-center h-100">
@@ -111,4 +111,4 @@ function userregister() {
   );
 }
 
-export default userregister;
+export default Registration;

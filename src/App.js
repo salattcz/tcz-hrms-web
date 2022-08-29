@@ -15,9 +15,10 @@ import Button4 from './components/Button4/button4';
 import Button5 from './components/Button5/button5';
 import Button6 from './components/Button6/button6';
 import Button7 from './components/Button7/button7';
-import Admin from './components/Admin/adminlogin';
+import Adminlogin from './components/Adminlogin/adminlogin';
 import Adminhomepage from './components/Adminhomepage/adminhome';
 import Bulkadd from './components/Bulkadd/bulkadd';
+import Admin from './components/Admin/Admin';
 function App() {
   return (
     <Routes>
@@ -44,9 +45,10 @@ function App() {
       <Route exact path="/button5" element={<Button5 />} />
       <Route exact path="/button6" element={<Button6 />} />
       <Route exact path="/button7" element={<Button7 />} />
-      <Route exact path="/adminlogin" element={<Admin />} />
+      <Route exact path="/adminlogin" element={<Adminlogin />} />
       <Route exact path="/adminhome" element={<Adminhomepage />} />
       <Route exact path="/bulkadd" element={<Bulkadd />} />
+      <Route exact path="/Admin" element={<Admin />} />
     </Routes>
   );
 }

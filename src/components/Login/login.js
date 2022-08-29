@@ -2,7 +2,7 @@ import React from 'react';
 import './login.css';
 import { Link, Routes, Route } from 'react-router-dom';
 import Registration from '../Registration/registration';
-import Admin from '../Admin/adminlogin';
+import Adminlogin from '../Adminlogin/adminlogin';
 function Login() {
   return (
     <div className="body">
@@ -56,7 +56,7 @@ function Login() {
             Admin Login
           </Link>
           <Routes>
-            <Route path="/adminlogin" component={<Admin />}></Route>
+            <Route path="/adminlogin" component={<Adminlogin />}></Route>
           </Routes>
         </form>
       </div>
