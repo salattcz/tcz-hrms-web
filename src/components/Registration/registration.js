@@ -1,6 +1,62 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { companyRegisterAPI } from '../../helpers/CompanyAPIs';
+import { addBulkUsers } from '../../helpers/UsersAPIs';
+// import { addBulkUsers } from '../../helpers/UsersAPIs';
 import './registration.css';
+
 function userregister() {
+  const navigate = useNavigate();
+
+  const [companyName, setCompanyName] = useState('');
+  const [companyEmail, setCompanyEmail] = useState('');
+  const [companyContact, setCompanyContact] = useState('');
+  const [companyDescription, setCompanyDescription] = useState('');
+  const [companyAdmin, setCompanyAdmin] = useState('');
+  const [file, setFile] = useState();
+
+  const handleNameInput = (e) => {
+    setCompanyName(e.target.value);
+  };
+  const handleEmailInput = (e) => {
+    setCompanyEmail(e.target.value);
+  };
+  const handleContactInput = (e) => {
+    setCompanyContact(e.target.value);
+  };
+  const handleDescriptionInput = (e) => {
+    setCompanyDescription(e.target.value);
+  };
+  const handleAdminInput = (e) => {
+    setCompanyAdmin(e.target.value);
+  };
+  const handleFile = (e) => {
+    e.preventDefault();
+    setFile(e.target.files[0]);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append('file', file);
+    companyRegisterAPI({
+      name: companyName,
+      email: companyEmail,
+      contactNumber: companyContact,
+      description: companyDescription,
+      admins: companyAdmin,
+      subscPeriod: '1month',
+      subscType: 'temporary'
+    }).then(
+      addBulkUsers(formData).then((res) => {
+        if (res.status === 200) {
+          window.alert('Company registered successfully!');
+          navigate('/');
+        }
+      })
+    );
+  };
+
   return (
     <div className="container py-5 h-100">
       <div className="row justify-content-center align-items-center h-100">
@@ -20,6 +76,7 @@ function userregister() {
                         id="CompanyName"
                         className="form-control form-control-lg"
                         required
+                        onChange={handleNameInput}
                       />
                     </div>
                   </div>
@@ -35,6 +92,7 @@ function userregister() {
                         id="emailAddress"
                         className="form-control form-control-lg"
                         required
+                        onChange={handleEmailInput}
                       />
                     </div>
                   </div>
@@ -48,6 +106,7 @@ function userregister() {
                         id="Company contact"
                         className="form-control form-control-lg"
                         required
+                        onChange={handleContactInput}
                       />
                     </div>
                   </div>
@@ -61,6 +120,7 @@ function userregister() {
                         id="company Description"
                         className="form-control form-control-lg"
                         required
+                        onChange={handleDescriptionInput}
                       />
                     </div>
                   </div>
@@ -74,13 +134,7 @@ function userregister() {
                         id="Admin Mails"
                         className="form-control form-control-lg"
                         required
-                      />
-                      <br />
-                      <input
-                        type="text"
-                        id="Admin Mails"
-                        className="form-control form-control-lg"
-                        required
+                        onChange={handleAdminInput}
                       />
                     </div>
                   </div>
@@ -95,12 +149,22 @@ function userregister() {
                         className="form-control form-control-lg"
                         multiple
                         required
+                        onChange={handleFile}
                       />
+                      <br />
+                      {/* <button className="btn btn-dark" onClick={handleFileSubmit}>
+                        Go
+                      </button> */}
                     </div>
                   </div>
                 </div>
                 <div className="mt-4 pt-2">
-                  <input className="btn btn-dark btn-lg" type="submit" value="Submit" />
+                  <input
+                    className="btn btn-dark btn-lg"
+                    type="submit"
+                    value="Submit"
+                    onClick={handleSubmit}
+                  />
                 </div>
               </form>
             </div>
