@@ -8,6 +8,11 @@ export const addBulkUsers = async (formData) => {
 };
 
 export const adminLoginApi = async (loginData) => {
-  const res = await base.post('/user/admin-login', loginData);
-  return res;
+  try {
+    const res = await base.post('/user/admin-login', loginData);
+    return res;
+  } catch (error) {
+    const res = error.response;
+    return res;
+  }
 };

@@ -22,8 +22,10 @@ function Login() {
       if (res.status === 200) {
         localStorage.setItem('Profile', JSON.stringify(res.data));
         navigate('/Admin');
-      } else {
-        window.alert('Invalid Credentials');
+      } else if (res.status === 400) {
+        window.alert('Invalid username or password');
+      } else if (res.status === 404) {
+        window.alert("User doesn't hold admin authority");
       }
     });
   };
