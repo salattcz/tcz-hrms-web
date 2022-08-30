@@ -1,6 +1,81 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+import { addSingleUserApi } from '../../helpers/UsersAPIs';
 import './userregister.css';
 function User() {
+  const navigate = useNavigate();
+  const [name, setName] = useState('');
+  const [dob, setDob] = useState('');
+  const [gender, setGender] = useState('');
+  const [email, setEmail] = useState('');
+  const [department, setDepartment] = useState('');
+  const [mobileNumber, setMobileNumber] = useState('');
+  const [username, setUsername] = useState('');
+  const [jobTitle, setJobTitle] = useState('');
+  const [role, setRole] = useState('');
+
+  const handleNameInput = (e) => {
+    setName(e.target.value);
+  };
+  const handleDobInput = (e) => {
+    setDob(e.target.value);
+  };
+  const handleGenderInput = (e) => {
+    setGender(e.target.value);
+  };
+  const handleEmailInput = (e) => {
+    setEmail(e.target.value);
+  };
+  const handleDepartmentInput = (e) => {
+    setDepartment(e.target.value);
+  };
+  const handleMobileNumberInput = (e) => {
+    setMobileNumber(e.target.value);
+  };
+  const handleUsernameInput = (e) => {
+    setUsername(e.target.value);
+  };
+  const handleJobTitleInput = (e) => {
+    setJobTitle(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (
+      !name &&
+      !dob &&
+      !gender &&
+      !email &&
+      !department &&
+      !mobileNumber &&
+      !username &&
+      !jobTitle &&
+      !role
+    ) {
+      window.alert('Please fill all the details');
+    } else {
+      addSingleUserApi({
+        name,
+        dob,
+        gender,
+        email,
+        department,
+        mobileNumber,
+        username,
+        jobTitle,
+        role
+      }).then((res) => {
+        if (res.status === 200) {
+          window.alert('User added successfully');
+          navigate('/Admin');
+        } else if (res.status === 400) {
+          window.alert('User already exists');
+        }
+      });
+    }
+  };
+
   return (
     <div>
       <div className="container py-5 h-100">
@@ -11,29 +86,17 @@ function User() {
                 <h3 className="mb-4 pb-2 pb-md-0 mb-md-5">User Register</h3>
                 <form>
                   <div className="row">
-                    <div className="col-md-6 mb-4">
+                    <div className="col-md-12 mb-4">
                       <div className="form-outline">
                         <label className="form-label" htmlFor="firstName">
-                          First Name
+                          Full Name
                         </label>
                         <input
                           type="text"
                           id="firstName"
                           className="form-control form-control-lg"
                           required
-                        />
-                      </div>
-                    </div>
-                    <div className="col-md-6 mb-4">
-                      <div className="form-outline">
-                        <label className="form-label" htmlFor="lastName">
-                          Last Name
-                        </label>
-                        <input
-                          type="text"
-                          id="lastName"
-                          className="form-control form-control-lg"
-                          required
+                          onChange={handleNameInput}
                         />
                       </div>
                     </div>
@@ -52,20 +115,23 @@ function User() {
                           placeholder="MM/DD/YYY"
                           type="date"
                           required
+                          onChange={handleDobInput}
                         />
                       </div>
                     </div>
                     <div className="col-md-6 mb-4">
                       <h6 className="mb-2 pb-1">Gender: </h6>
 
-                      <div className="form-check form-check-inline">
+                      <div
+                        className="form-check form-check-inline"
+                        value={gender}
+                        onChange={handleGenderInput}>
                         <input
                           className="form-check-input"
                           type="radio"
                           name="inlineRadioOptions"
                           id="femaleGender"
-                          value="option1"
-                          checked
+                          value="female"
                         />
                         <label className="form-check-label" htmlFor="femaleGender">
                           Female
@@ -78,7 +144,7 @@ function User() {
                           type="radio"
                           name="inlineRadioOptions"
                           id="maleGender"
-                          value="option2"
+                          value="male"
                           required
                         />
                         <label className="form-check-label" htmlFor="maleGender">
@@ -92,7 +158,7 @@ function User() {
                           type="radio"
                           name="inlineRadioOptions"
                           id="otherGender"
-                          value="option3"
+                          value="other"
                           required
                         />
                         <label className="form-check-label" htmlFor="otherGender">
@@ -113,6 +179,7 @@ function User() {
                           id="emailAddress"
                           className="form-control form-control-lg"
                           required
+                          onChange={handleEmailInput}
                         />
                       </div>
                     </div>
@@ -126,6 +193,7 @@ function User() {
                           id="Department"
                           className="form-control form-control-lg"
                           required
+                          onChange={handleDepartmentInput}
                         />
                       </div>
                     </div>
@@ -139,6 +207,7 @@ function User() {
                           id="phoneNumber"
                           className="form-control form-control-lg"
                           required
+                          onChange={handleMobileNumberInput}
                         />
                       </div>
                     </div>
@@ -152,6 +221,7 @@ function User() {
                           id="Username"
                           className="form-control form-control-lg"
                           required
+                          onChange={handleUsernameInput}
                         />
                       </div>
                     </div>
@@ -166,6 +236,7 @@ function User() {
                           id="Job Title"
                           className="form-control form-control-lg"
                           required
+                          onChange={handleJobTitleInput}
                         />
                       </div>
                     </div>
@@ -187,19 +258,27 @@ function User() {
 
                   <div className="row">
                     <div className="col-12">
-                      <select className="select form-control-lg">
-                        <option value="1" disabled>
+                      <select
+                        value={role}
+                        className="select form-control-lg"
+                        onChange={(e) => setRole(e.target.value)}>
+                        <option value="" hidden>
                           Role
                         </option>
-                        <option value="2">Admin</option>
-                        <option value="3">Employee</option>
+                        <option value="admin">Admin</option>
+                        <option value="employee">Employee</option>
                       </select>
                       <label className="form-label select-label">Role</label>
                     </div>
                   </div>
 
                   <div className="mt-4 pt-2">
-                    <input className="btn btn-primary btn-lg" type="submit" value="Submit" />
+                    <input
+                      className="btn btn-primary btn-lg"
+                      type="submit"
+                      value="Submit"
+                      onClick={handleSubmit}
+                    />
                   </div>
                 </form>
               </div>

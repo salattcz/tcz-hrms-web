@@ -7,6 +7,16 @@ export const addBulkUsers = async (formData) => {
   return res;
 };
 
+export const addSingleUserApi = async (userData) => {
+  try {
+    const res = await base.post('/user/add-single-user', userData);
+    return res;
+  } catch (error) {
+    const res = error.response;
+    return res;
+  }
+};
+
 export const adminLoginApi = async (loginData) => {
   try {
     const res = await base.post('/user/admin-login', loginData);
