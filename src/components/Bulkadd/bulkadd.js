@@ -1,9 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './bulkadd.css';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
+import { addBulkUsers } from '../../helpers/UsersAPIs';
 import Adminhomepage from '../Adminhomepage/adminhome';
 import Adminfooter from '../Adminfooter/adminfooter';
 function bulkadd() {
+  const navigate = useNavigate();
+  const [file, setFile] = useState();
+  const handleFileInput = (e) => {
+    setFile(e.target.files[0]);
+  };
+  const handleFileSubmit = (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append('file', file);
+    if (file === undefined) {
+      window.alert('please select a file first');
+    } else {
+      addBulkUsers(formData).then((res) => {
+        if (res.status === 200) {
+          window.alert('Users added successfully!');
+          navigate('/Admin');
+        }
+      });
+    }
+  };
   return (
     <Routes>
       <Route
@@ -22,7 +43,13 @@ function bulkadd() {
                   className="form-control form-control-lg"
                   multiple
                   required
+                  onChange={handleFileInput}
                 />
+                <br />
+                <br />
+                <button className="btn btn-dark btn-lg" onClick={handleFileSubmit}>
+                  Submit
+                </button>
               </div>
               <Adminfooter />
             </div>
