@@ -43,14 +43,14 @@ function User() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (
-      !name &&
-      !dob &&
-      !gender &&
-      !email &&
-      !department &&
-      !mobileNumber &&
-      !username &&
-      !jobTitle &&
+      !name ||
+      !dob ||
+      !gender ||
+      !email ||
+      !department ||
+      !mobileNumber ||
+      !username ||
+      !jobTitle ||
       !role
     ) {
       window.alert('Please fill all the details');
