@@ -38,24 +38,28 @@ function userregister() {
     e.preventDefault();
     const formData = new FormData();
     formData.append('file', file);
-    companyRegisterAPI({
-      name: companyName,
-      email: companyEmail,
-      contactNumber: companyContact,
-      description: companyDescription,
-      admins: companyAdmin,
-      subscPeriod: '1month',
-      subscType: 'temporary'
-    }).then(
-      file !== undefined
-        ? addBulkUsers(formData).then((res) => {
-            if (res.status === 200) {
-              window.alert('Company registered successfully!');
-              navigate('/');
-            }
-          })
-        : (window.alert('Company registered successfully!'), navigate('/'))
-    );
+    if (!companyName || !companyEmail || !companyContact || !companyDescription || !companyAdmin) {
+      window.alert('Please fill all the details');
+    } else {
+      companyRegisterAPI({
+        name: companyName,
+        email: companyEmail,
+        contactNumber: companyContact,
+        description: companyDescription,
+        admins: companyAdmin,
+        subscPeriod: '1month',
+        subscType: 'temporary'
+      }).then(
+        file !== undefined
+          ? addBulkUsers(formData).then((res) => {
+              if (res.status === 200) {
+                window.alert('Company registered successfully!');
+                navigate('/');
+              }
+            })
+          : (window.alert('Company registered successfully!'), navigate('/'))
+      );
+    }
   };
 
   return (
