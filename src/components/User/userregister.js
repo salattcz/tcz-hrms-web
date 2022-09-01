@@ -122,16 +122,14 @@ function User() {
                     <div className="col-md-6 mb-4">
                       <h6 className="mb-2 pb-1">Gender: </h6>
 
-                      <div
-                        className="form-check form-check-inline"
-                        value={gender}
-                        onChange={handleGenderInput}>
+                      <div className="form-check form-check-inline">
                         <input
                           className="form-check-input"
                           type="radio"
                           name="inlineRadioOptions"
                           id="femaleGender"
                           value="female"
+                          onChange={handleGenderInput}
                         />
                         <label className="form-check-label" htmlFor="femaleGender">
                           Female
@@ -145,7 +143,7 @@ function User() {
                           name="inlineRadioOptions"
                           id="maleGender"
                           value="male"
-                          required
+                          onChange={handleGenderInput}
                         />
                         <label className="form-check-label" htmlFor="maleGender">
                           Male
@@ -159,7 +157,7 @@ function User() {
                           name="inlineRadioOptions"
                           id="otherGender"
                           value="other"
-                          required
+                          onChange={handleGenderInput}
                         />
                         <label className="form-check-label" htmlFor="otherGender">
                           Other
