@@ -12,37 +12,34 @@ function Login() {
           <label className="item">
             <b>Company Email</b>
           </label>
-          <div className="text_area">
+          <div className="text">
             <input
               type="text"
-              id="username"
               name="username"
               // placeholder="Company Email"
-              className="text_input"
+              className="form-control form-control-lg"
             />
           </div>
           <label className="item2">
             <b>Email</b>
           </label>
-          <div className="text_area">
+          <div className="text">
             <input
               type="text"
-              id="password"
               name="password"
               // placeholder="Email"
-              className="text_input"
+              className="form-control form-control-lg"
             />
           </div>
           <label className="item3">
             <b>Password</b>
           </label>
-          <div className="text_area">
+          <div className="text">
             <input
-              type="text"
-              id="password"
+              type="password"
               name="password"
               // placeholder="Password"
-              className="text_input"
+              className="form-control form-control-lg"
             />
           </div>
           <input type="submit" value="LOGIN" className="button" />

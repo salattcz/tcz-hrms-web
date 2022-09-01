@@ -34,13 +34,14 @@ function bulkadd() {
             <Adminhomepage />
             <div className="col-md-12 mb-4 pb-2">
               <div id="form-outline">
-                <label className="form-label" htmlFor="upload">
+                {/* <label className="form-label" htmlFor="upload">
                   Bulk upload
-                </label>
+                </label> */}
+                <h5>Bulk Upload</h5>
                 <input
                   type="file"
-                  id="Bulk upload"
-                  className="form-control form-control-lg"
+                  id="Bulk_upload"
+                  className="btn btn-lg form-control form-control-lg"
                   multiple
                   required
                   onChange={handleFileInput}

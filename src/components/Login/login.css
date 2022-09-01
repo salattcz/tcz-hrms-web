@@ -10,11 +10,11 @@ h4{
     font-size: 35px;
     margin-top: 1rem;
     margin-bottom: 2rem;
-    display: block;
+    display: inline-block;
 }
 h4:hover{
-    background-color: aqua;
-    
+    background-color: rgb(249, 249, 249);
+    color:#878fea;
 }
 
 .Form{
@@ -26,24 +26,23 @@ h4:hover{
     /* background-color: red; */
    
 }
-.text_area{
+.text{
     align-content: center;
     border-radius: 22px;
     margin-bottom: 35px;
-    width: 100%;
-    height: 44px;
-    box-shadow: 0 0 8px 0 rgba(102, 228, 242, 0.2), 0 0 20px 0 rgba(102, 245, 245, 0.19);
+    
+    /* box-shadow: 0 0 8px 0 rgba(102, 228, 242, 0.2), 0 0 20px 0 rgba(102, 245, 245, 0.19); */
     /* background-color: red; */
 }
 
-.text_input{
+/* .text_input{
     margin-top: 0.4rem;
     font-family: 'Montserrat regular';
     font-size: 20px;
     border: none;
     width: 80%;
     
-}
+} */
 
 .button{
     margin-top: 28px;
@@ -83,14 +82,21 @@ h4:hover{
     position: relative;
     margin-right: 12rem;
     margin-bottom: 0.7rem;
+    margin-left: 2rem;
 }
 .item2{
     position: relative;
     margin-right: 17rem;
     margin-bottom: 0.7rem;
+    margin-left: 2rem;
 }
 .item3{
     position: relative;
     margin-right: 15rem;
     margin-bottom: 0.7rem;
+    margin-left: 2rem;
+}
+.form-control{
+    width: 17rem;
+    margin-left: 2rem;
 }

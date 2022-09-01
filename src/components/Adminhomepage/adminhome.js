@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, Routes, Route } from 'react-router-dom';
 // import logo from './logo.jpg';
 import './adminhome.css';
-// import Login from '../Login/login';
+import Login from '../Login/login';
 import User from '../User/userregister';
 import Button3 from '../Button3/button3';
 import Button4 from '../Button4/button4';
@@ -10,6 +10,7 @@ import Button5 from '../Button5/button5';
 import Button6 from '../Button6/button6';
 import Button7 from '../Button7/button7';
 import Bulkadd from '../Bulkadd/bulkadd';
+import Employees from '../Employees/Employees';
 import {
   FaAtlassian,
   FaBlackberry,
@@ -17,7 +18,9 @@ import {
   FaDrupal,
   FaGoogleWallet,
   FaJoomla,
-  FaMandalorian
+  FaMandalorian,
+  FaCreativeCommonsBy,
+  FaEllo
 } from 'react-icons/fa';
 // import Adminfooter from '../Adminfooter/adminfooter';
 function Navbar() {
@@ -31,16 +34,16 @@ function Navbar() {
           </label>
           <ul className="menu__box">
             <li>
-              <Link className="menu__item" to="/button3">
-                Employees
+              <Link className="menu__item" to="/Employees">
+                <FaCreativeCommonsBy /> Employees
               </Link>
               <Routes>
-                <Route path="/button3" component={<Button3 />}></Route>
+                <Route path="/Employees" component={<Employees />}></Route>
               </Routes>
             </li>
             <li>
               <Link className="menu__item" to="/button3">
-                Holidays
+                <FaEllo /> Holidays
               </Link>
               <Routes>
                 <Route path="/button3" component={<Button3 />}></Route>
@@ -146,18 +149,18 @@ function Navbar() {
             </ul>
 
             <form className="d-flex">
-              {/* <div className="collapse navbar-collapse" id="navbarColor01">
+              <div className="collapse navbar-collapse" id="navbarColor01">
                 <ul className="navbar-nav me-auto">
                   <li className="nav">
                     <Link className="nav-link active" to="/login">
-                      login
+                      Logout
                     </Link>
                   </li>
                 </ul>
                 <Routes>
                   <Route path="/login" component={<Login />}></Route>
                 </Routes>
-              </div> */}
+              </div>
 
               <input className="form-control me-sm-2" type="text" placeholder="Search"></input>
               <button className="btn btn-secondary my-2 my-sm-0 btn-dark" type="submit">
@@ -167,70 +170,6 @@ function Navbar() {
           </div>
         </div>
       </nav>
-
-      {/* <Routes>
-        <Route
-          exact
-          path="/"
-          element={
-            <div className="App container">
-              <Adminfooter />
-            </div>
-          }
-        />
-      </Routes> */}
-
-      {/* <div>
-        <footer className="footer-distributed bg-dark">
-          <div className="footer-left">
-            <h3>
-              <span>HRMS</span>
-            </h3>
-
-            <p className="footer-links">
-              <a href="#" className="link-1">
-                Home
-              </a>
-
-              <a href="#">Blog</a>
-
-              <a href="#">About</a>
-
-              <a href="#">Contact</a>
-            </p>
-
-            <p className="footer-company-name">HRMS</p>
-          </div>
-
-          <div className="footer-center">
-            <div>
-              <i className="fa fa-map-marker"></i>
-              <p>
-                <span>Address</span>
-              </p>
-            </div>
-
-            <div>
-              <i className="fa fa-phone"></i>
-              <p>ph. no</p>
-            </div>
-
-            <div>
-              <i className="fa fa-envelope"></i>
-              <p>
-                <a href="mailto:mail">mail</a>
-              </p>
-            </div>
-          </div>
-
-          <div className="footer-right">
-            <p className="footer-company-about">
-              <span>About the company</span>
-              description
-            </p>
-          </div>
-        </footer>
-      </div> */}
     </div>
   );
 }
