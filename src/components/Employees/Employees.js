@@ -1,11 +1,24 @@
+<<<<<<< HEAD
 import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
+=======
+import React, { useEffect, useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { getAllUsersApi } from '../../helpers/UsersAPIs';
+>>>>>>> 9226598d85371cc427b2cdd160d796883f667e68
 import Adminfooter from '../Adminfooter/adminfooter';
 import Adminhomepage from '../Adminhomepage/adminhome';
 import './Employees.css';
 import logo from './logo.jpg';
 import Ham from '../Ham/button1';
 function Employees() {
+  const [userList, setUserList] = useState([]);
+  useEffect(() => {
+    getAllUsersApi(0, 3).then((res) => {
+      setUserList(res.data);
+    });
+  }, []);
+
   return (
     <div className="App container">
       <Routes>
@@ -41,6 +54,7 @@ function Employees() {
                     <th scope="col">Reporting Manager</th>
                   </tr>
                 </thead>
+<<<<<<< HEAD
                 <tbody>
                   <Link className="table-row" to="/button1">
                     <tr>
@@ -58,6 +72,21 @@ function Employees() {
                     <Route path="/button1" component={<Ham />}></Route>
                   </Routes>
 
+=======
+                {userList.map((user) => (
+                  <tbody key={user._id}>
+                    <tr>
+                      <th scope="row">{user._id}</th>
+                      <td>
+                        <a href="#">{user.name}</a>
+                      </td>
+                      <td>{user.department}</td>
+                      <td>{user.reportingManager ? user.reportingManager : '---'}</td>
+                    </tr>
+                  </tbody>
+                ))}
+                {/* <tbody>
+>>>>>>> 9226598d85371cc427b2cdd160d796883f667e68
                   <tr>
                     <th scope="row">
                       <img className="pic" src={logo} alt="this is logo image" /> 2
@@ -78,7 +107,7 @@ function Employees() {
                     <td>Creative</td>
                     <td>Saloni Sikdar</td>
                   </tr>
-                </tbody>
+                </tbody> */}
               </table>
               <Adminfooter />
             </div>

@@ -26,3 +26,12 @@ export const adminLoginApi = async (loginData) => {
     return res;
   }
 };
+
+export const getAllUsersApi = async (skip, limit) => {
+  try {
+    const res = await base.get(`/user/get-all-users/${skip}/${limit}`);
+    return res;
+  } catch (error) {
+    console.log(error);
+  }
+};
