@@ -1,0 +1,44 @@
+/* #Bulk_upload{
+    position:absolute;
+    /* left: 30rem; */
+    /* right: 8rem;
+    top:8rem; */
+ */
+.bu{
+    position: absolute;
+    
+}
+
+#form-label{
+    padding-bottom: 5rem;
+    /* position: absolute; */
+    /* margin-top: 10rem; */
+    margin-bottom: 10rem;
+    
+}
+/* #form-label{
+    position: absolute;
+    right: 14rem;
+    top: 5rem
+} */
+.bu{
+    margin-top: 2rem;
+    position: absolute;
+    right: 10rem;
+    
+}
+.table{
+    margin-top: 10rem;
+}
+.pic{
+    padding-right: 1rem;
+    
+    width:50px;
+    
+}
+.emp{
+    display: inline;
+}
+.table-row {
+    display: table-row
+  }

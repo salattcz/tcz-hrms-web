@@ -40,7 +40,7 @@ function bulkadd() {
                 <h5>Bulk Upload</h5>
                 <input
                   type="file"
-                  id="Bulk_upload"
+                  id="Bulk_load"
                   className="btn btn-lg form-control form-control-lg"
                   multiple
                   required
