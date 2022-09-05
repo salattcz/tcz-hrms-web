@@ -30,7 +30,7 @@ function Employees() {
 
               <div className="col-md-12 mb-4 pb-2">
                 <form className="bu form-outline">
-                  <label id="form-label" htmlFor="upload">
+                  <label id="fo form-label" htmlFor="upload">
                     Bulk upload:-
                     <input
                       type="file"
