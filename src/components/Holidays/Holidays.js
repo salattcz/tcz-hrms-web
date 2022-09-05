@@ -1,10 +1,23 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import Adminfooter from '../Adminfooter/adminfooter';
 import Adminhomepage from '../Adminhomepage/adminhome';
 import './Holidays.css';
+import { getAllCalendarsApi } from '../../helpers/HolidayApis';
 // import logo from './logo.jpg';
 function Holidays() {
+  const navigate = useNavigate();
+
+  const [calendarList, setCalendarList] = useState([]);
+  useEffect(() => {
+    getAllCalendarsApi(0, 3).then((res) => {
+      setCalendarList(res.data);
+    });
+  }, []);
+
+  const handleClick = () => {
+    navigate('/button1');
+  };
   return (
     <div className="App container">
       <Routes>
@@ -35,40 +48,22 @@ function Holidays() {
                 <thead>
                   <tr>
                     {/* <th scope="col">Number</th> */}
+                    <th scope="col">Calendar Name</th>
                     <th scope="col">Admin</th>
-                    <th scope="col">Employees</th>
-                    <th scope="col">Interns</th>
+                    <th scope="col">No. of Holidays</th>
                   </tr>
                 </thead>
-                <tbody>
-                  {/* <Link className="me" to="/button1"> */}
-                  <tr>
-                    <td>
-                      <a>....</a>
-                    </td>
-                    <td>.....</td>
-                    <td>.....</td>
-                  </tr>
-                  {/* </Link>
-                    <Routes>
-                      <Route path="/button1" component={<Ham />}></Route>
-                    </Routes> */}
-
-                  <tr>
-                    <td>
-                      <a href="#">.....</a>
-                    </td>
-                    <td>.....</td>
-                    <td>.....</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="#">......</a>
-                    </td>
-                    <td>.....</td>
-                    <td>.....</td>
-                  </tr>
-                </tbody>
+                {calendarList === []
+                  ? ''
+                  : calendarList.map((calendar) => (
+                      <tbody key={calendar._id}>
+                        <tr onClick={handleClick}>
+                          <td>{calendar.calendarName}</td>
+                          <td>{calendar.createdBy}</td>
+                          <td>{calendar.holidays.length}</td>
+                        </tr>
+                      </tbody>
+                    ))}
               </table>
               <Adminfooter />
             </div>
