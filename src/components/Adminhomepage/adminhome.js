@@ -4,7 +4,7 @@ import { Link, Routes, Route } from 'react-router-dom';
 import './adminhome.css';
 import Login from '../Login/login';
 import User from '../User/userregister';
-import Button3 from '../Button3/button3';
+// import Button3 from '../Button3/button3';
 import Button4 from '../Button4/button4';
 import Button5 from '../Button5/button5';
 import Button6 from '../Button6/button6';
@@ -12,6 +12,7 @@ import Button7 from '../Button7/button7';
 import Bulkadd from '../Bulkadd/bulkadd';
 import Employees from '../Employees/Employees';
 import Holidays from '../Holidays/Holidays';
+import Userdetails from '../Userdetails/Userdetails';
 import {
   FaAtlassian,
   FaBlackberry,
@@ -68,11 +69,11 @@ function Navbar() {
               </Routes>
             </li>
             <li>
-              <Link className="menu__item" to="/button3">
+              <Link className="menu__item" to="/Userdetails">
                 <FaCloudflare /> Button-3
               </Link>
               <Routes>
-                <Route path="/button3" component={<Button3 />}></Route>
+                <Route path="/Userdetails" component={<Userdetails />}></Route>
               </Routes>
             </li>
             <li>
