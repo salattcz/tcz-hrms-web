@@ -10,6 +10,8 @@ import Button5 from '../Button5/button5';
 import Button6 from '../Button6/button6';
 import Button7 from '../Button7/button7';
 import Bulkadd from '../Bulkadd/bulkadd';
+import Holidays from '../Holidays/Holidays';
+import Employees from '../Employees/Employees';
 import {
   FaAtlassian,
   FaBlackberry,
@@ -31,19 +33,19 @@ function Navbar() {
           </label>
           <ul className="menu__box">
             <li>
-              <Link className="menu__item" to="/button3">
+              <Link className="menu__item" to="/Employees">
                 Employees
               </Link>
               <Routes>
-                <Route path="/button3" component={<Button3 />}></Route>
+                <Route path="/Employees" component={<Employees />}></Route>
               </Routes>
             </li>
             <li>
-              <Link className="menu__item" to="/button3">
+              <Link className="menu__item" to="/Holidays">
                 Holidays
               </Link>
               <Routes>
-                <Route path="/button3" component={<Button3 />}></Route>
+                <Route path="/Holidays" component={<Holidays />}></Route>
               </Routes>
             </li>
             <li>

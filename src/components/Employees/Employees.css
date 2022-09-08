@@ -1,0 +1,27 @@
+.bu{
+    position: absolute;
+    
+}
+
+
+.bu{
+    margin-top: 2rem;
+    position: absolute;
+    right: 10rem;
+    
+}
+.table{
+    margin-top: 10rem;
+}
+.pic{
+    padding-right: 1rem;
+    
+    width:50px;
+    
+}
+.emp{
+    display: inline;
+}
+.table-row {
+    display: table-row
+  }
