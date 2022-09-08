@@ -1,4 +1,4 @@
-img {
+.log {
     width: 80%;
     height: 100%;
   }
@@ -38,5 +38,18 @@ img {
   }
   .text-label{
     margin-left: 1rem;
+  }
+  .data-label{
+    font-weight: bold;
+  }
+  #row{
+    margin-left:2rem;
+
+  }
+  .he{
+    margin-left:2.8rem;
+  }
+  .Hea{
+    margin-left: 0.8rem;
   }
   

@@ -3,11 +3,17 @@
         "Adminfooter",
         "adminhome",
         "Adminhomepage",
+<<<<<<< HEAD
         "Adminlogin",
         "browserslist",
         "bulkadd",
         "Chhikara",
         "Ello",
+=======
+        "browserslist",
+        "Bulkadd",
+        "Chhikara",
+>>>>>>> f909c08a68423310be0f41e2713b8c74fb948628
         "Gripfire",
         "HRMS",
         "Joomla",
@@ -15,7 +21,10 @@
         "Nishant",
         "Saloni",
         "Sikdar",
+<<<<<<< HEAD
         "subsc",
+=======
+>>>>>>> f909c08a68423310be0f41e2713b8c74fb948628
         "Techchefz",
         "Userdetails",
         "userregister"
