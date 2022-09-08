@@ -35,3 +35,14 @@ export const getAllUsersApi = async (skip, limit) => {
     console.log(error);
   }
 };
+
+export const getUserApi = async (employeeId) => {
+  try {
+    const res = await base.get(`/user/get-user/${employeeId}`);
+    return res;
+  } catch (error) {
+    console.log(error);
+    const res = error.response;
+    return res;
+  }
+};

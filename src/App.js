@@ -54,7 +54,7 @@ function App() {
       <Route exact path="/Admin" element={<Admin />} />
       <Route exact path="/Holidays" element={<Holidays />} />
       <Route exact path="/Employees" element={<Employees />} />
-      <Route exact path="/Userdetails" element={<Userdetails />} />
+      <Route exact path="/Userdetails/:id" element={<Userdetails />} />
     </Routes>
   );
 }

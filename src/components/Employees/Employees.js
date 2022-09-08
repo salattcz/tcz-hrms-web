@@ -16,9 +16,10 @@ function Employees() {
     });
   }, []);
 
-  const handleClick = () => {
-    navigate('/button1');
+  const handleClick = (employeeId) => {
+    navigate(`/Userdetails/${employeeId}`, employeeId);
   };
+
   return (
     <div className="App container">
       <Routes>
@@ -58,7 +59,10 @@ function Employees() {
                   {userList === []
                     ? ''
                     : userList.map((user) => (
-                        <tr onClick={handleClick} key={user._id} style={{ cursor: 'pointer' }}>
+                        <tr
+                          onClick={() => handleClick(user._id)}
+                          key={user._id}
+                          style={{ cursor: 'pointer' }}>
                           <th scope="row">
                             <img className="pic" src={logo} alt="this is logo image" /> 1
                           </th>

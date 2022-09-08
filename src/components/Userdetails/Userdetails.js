@@ -1,17 +1,30 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Routes, Route, useParams } from 'react-router-dom';
 import Adminfooter from '../Adminfooter/adminfooter';
 import Adminhomepage from '../Adminhomepage/adminhome';
 import './Userdetails.css';
 import logo from './logo.jpg';
+import { getUserApi } from '../../helpers/UsersAPIs';
+
 function Userdetails() {
+  const params = useParams();
+  const userId = params.id;
+
+  const [userData, setUserData] = useState({});
+
+  useEffect(() => {
+    getUserApi(userId).then((res) => {
+      setUserData(res.data);
+    });
+  }, []);
+
   return (
-    <div classNameNameName="App container">
+    <div className="App container">
       <Routes>
         <Route
           path="*"
           element={
-            <div classNameNameName="App container">
+            <div className="App container">
               <Adminhomepage />
               <div className="container ">
                 <div className="row">
@@ -22,34 +35,34 @@ function Userdetails() {
                     <div className="card-body d-flex flex-column">
                       <div className="row">
                         <div className="he col-md-8 mb-4">
-                          <h2 className="nam d-flex ">Nishant Chhikara</h2>
+                          <h2 className="nam d-flex ">{userData.name}</h2>
                           <div className="row">
-                            <div className="col-sm">Delhi</div>
-                            <div className="col-sm">Email</div>
-                            <div className="col-sm">phone</div>
+                            <div className="col-lg-4 col-sm-6 col-md-4">
+                              <label className="data-label">Location</label>
+                              <p className="text-truncate">
+                                {userData?.address?.map((add) => add.mailingAddress)}
+                              </p>
+                            </div>
+                            <div className="col-lg-4 col-sm-6 col-md-4">
+                              <label className="data-label">Email</label>
+                              <p className="text-truncate">{userData?.contactDetails?.email}</p>
+                            </div>
+                            <div className="col-lg-4 col-sm-6 col-md-4">
+                              <label className="data-label">Phone</label>
+                              <p className="text-truncate">
+                                {userData?.contactDetails?.mobileNumber}
+                              </p>
+                            </div>
                           </div>
                         </div>
                         <div className="row">
                           <div className="col-lg-4 col-sm-6 col-md-4">
                             <label className="data-label">job title</label>
-                            <p className="text-truncate">Intern-Technology</p>
+                            <p className="text-truncate">{userData.jobTitle}</p>
                           </div>
                           <div className="col-lg-4 col-sm-6 col-md-4">
                             <label className="data-label">Department</label>
-                            <p>Creative</p>
-                          </div>
-                          <div className="col-lg-4 col-sm-6 col-md-4">
-                            <label className="data-label">Business Unit</label>
-                            <p>Techchefz</p>
-                          </div>
-                          <div className="col-lg-4 col-sm-6 col-md-4">
-                            <label className="data-label">Reporting Manager</label>
-                            <label className="data-label">job title</label>
-                            <p className="text-truncate">Intern-Technology</p>
-                          </div>
-                          <div className="col-lg-4 col-sm-6 col-md-4">
-                            <label className="data-label">Department</label>
-                            <p>Creative</p>
+                            <p>{userData.department}</p>
                           </div>
                           <div className="col-lg-4 col-sm-6 col-md-4">
                             <label className="data-label">Business Unit</label>
@@ -58,7 +71,15 @@ function Userdetails() {
                           <div className="col-lg-4 col-sm-6 col-md-4">
                             <label className="data-label">Reporting Manager</label>
                             {/* >>>>>>> d505313f9c030242f37399f2c2a5ee104036e8ea */}
-                            <p>Saloni Sikdar</p>
+                            <p>{userData.reportingManager}</p>
+                          </div>
+                          <div className="col-lg-4 col-sm-6 col-md-4">
+                            <label className="data-label">Username</label>
+                            <p className="text-truncate">{userData?.contactDetails?.username}</p>
+                          </div>
+                          <div className="col-lg-4 col-sm-6 col-md-4">
+                            <label className="data-label">Employee Id</label>
+                            <p className="text-truncate">101</p>
                           </div>
                         </div>
                       </div>
