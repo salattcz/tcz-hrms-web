@@ -19,8 +19,8 @@ import Adminlogin from './components/Adminlogin/adminlogin';
 import Adminhomepage from './components/Adminhomepage/adminhome';
 import Bulkadd from './components/Bulkadd/bulkadd';
 import Admin from './components/Admin/Admin';
-import Employees from './components/Employees/Employees';
 import Holidays from './components/Holidays/Holidays';
+import Employees from './components/Employees/Employees';
 function App() {
   return (
     <Routes>
@@ -51,8 +51,8 @@ function App() {
       <Route exact path="/adminhome" element={<Adminhomepage />} />
       <Route exact path="/bulkadd" element={<Bulkadd />} />
       <Route exact path="/Admin" element={<Admin />} />
-      <Route exact path="/Employees" element={<Employees />} />
       <Route exact path="/Holidays" element={<Holidays />} />
+      <Route exact path="/Employees" element={<Employees />} />
     </Routes>
   );
 }

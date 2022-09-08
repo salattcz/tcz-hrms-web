@@ -1,20 +1,16 @@
-
+.bu{
+    margin-top: 2rem;
+    position: absolute;
+    right: 10rem;
     
+}
+.table{
+    margin-top: 10rem;
+}
+.img{
+    position: relative;
+    right:4rem;
     
+    width:40px;
     
-    .bu{
-        margin-top: 2rem;
-        position: absolute;
-        right: 10rem;
-        
-    }
-    .table{
-        margin-top: 10rem;
-    }
-    .img{
-        position: relative;
-        right:4rem;
-        
-        width:40px;
-        
-    }
+}
