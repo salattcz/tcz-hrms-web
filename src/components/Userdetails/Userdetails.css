@@ -1,4 +1,4 @@
-img {
+.log {
     width: 80%;
     height: 100%;
   }
@@ -48,5 +48,8 @@ img {
   }
   .he{
     margin-left:2.8rem;
+  }
+  .Hea{
+    margin-left: 0.8rem;
   }
   
