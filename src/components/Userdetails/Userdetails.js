@@ -5,6 +5,7 @@ import Adminhomepage from '../Adminhomepage/adminhome';
 import './Userdetails.css';
 import logo from './logo.jpg';
 import { getUserApi } from '../../helpers/UsersAPIs';
+import EditProfileModal from './EditProfileModal';
 
 function Userdetails() {
   const params = useParams();
@@ -83,6 +84,7 @@ function Userdetails() {
                           </div>
                         </div>
                       </div>
+                      {<EditProfileModal />}
                     </div>
                   </div>
                 </div>
