@@ -1,15 +1,19 @@
 import React from 'react';
 import { Link, Routes, Route } from 'react-router-dom';
-import logo from './logo.jpg';
-import './Navbar.css';
+// import logo from './logo.jpg';
+import './adminhome.css';
 import Login from '../Login/login';
-import Ham from '../Ham/button1';
-import Button2 from '../Button2/button2';
-import Button3 from '../Button3/button3';
-import Button4 from '../Button4/button4';
+import User from '../User/userregister';
+// import Button3 from '../Button3/button3';
+// import Button4 from '../Button4/button4';
 import Button5 from '../Button5/button5';
-import Button6 from '../Button6/button6.js';
+import Button6 from '../Button6/button6';
 import Button7 from '../Button7/button7';
+import Bulkadd from '../Bulkadd/bulkadd';
+import Holidays from '../Holidays/Holidays';
+import Employees from '../Employees/Employees';
+import Userdetails from '../Userdetails/Userdetails';
+import Calendar from '../Calendar/Calendar';
 import {
   FaAtlassian,
   FaBlackberry,
@@ -19,10 +23,11 @@ import {
   FaJoomla,
   FaMandalorian
 } from 'react-icons/fa';
+// import Adminfooter from '../Adminfooter/adminfooter';
 function Navbar() {
   return (
-    <div>
-      <nav className="navbar navbar-expand-lg navbar-dark">
+    <div className="App container">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="hamburger-menu ">
           <input id="menu__toggle" type="checkbox" />
           <label className="menu__btn" htmlFor="menu__toggle">
@@ -30,36 +35,52 @@ function Navbar() {
           </label>
           <ul className="menu__box">
             <li>
-              <Link className="menu__item" to="/button1">
-                <FaAtlassian /> Button-1
+              <Link className="menu__item" to="/Employees">
+                Employees
               </Link>
               <Routes>
-                <Route path="/button1" component={<Ham />}></Route>
+                <Route path="/Employees" component={<Employees />}></Route>
+              </Routes>
+            </li>
+            <li>
+              <Link className="menu__item" to="/Holidays">
+                Holidays
+              </Link>
+              <Routes>
+                <Route path="/Holidays" component={<Holidays />}></Route>
+              </Routes>
+            </li>
+            <li>
+              <Link className="menu__item" to="/userregister">
+                <FaAtlassian /> Add Users
+              </Link>
+              <Routes>
+                <Route path="/userregister" component={<User />}></Route>
               </Routes>
             </li>
 
             <li>
-              <Link className="menu__item" to="/button2">
-                <FaBlackberry /> Button-2
+              <Link className="menu__item" to="/bulkadd">
+                <FaBlackberry /> Bulk Add Users
               </Link>
               <Routes>
-                <Route path="/button2" component={<Button2 />}></Route>
+                <Route path="/bulkadd" component={<Bulkadd />}></Route>
               </Routes>
             </li>
             <li>
-              <Link className="menu__item" to="/button3">
+              <Link className="menu__item" to="/Userdetails">
                 <FaCloudflare /> Button-3
               </Link>
               <Routes>
-                <Route path="/button3" component={<Button3 />}></Route>
+                <Route path="/Userdetails" component={<Userdetails />}></Route>
               </Routes>
             </li>
             <li>
-              <Link className="menu__item" to="/button4">
+              <Link className="menu__item" to="/Calendar">
                 <FaDrupal /> Button-4
               </Link>
               <Routes>
-                <Route path="/button4" component={<Button4 />}></Route>
+                <Route path="/Calendar" component={<Calendar />}></Route>
               </Routes>
             </li>
             <li>
@@ -89,7 +110,7 @@ function Navbar() {
           </ul>
         </div>
         <div className="container-fluid">
-          <img className="logo" src={logo} alt="this is logo image" />
+          {/* <img className="logo" src={logo} alt="this is logo image" /> */}
           <a className="navbar-brand" href="#">
             HRMS
           </a>
@@ -133,7 +154,7 @@ function Navbar() {
                 <ul className="navbar-nav me-auto">
                   <li className="nav">
                     <Link className="nav-link active" to="/login">
-                      login
+                      logout
                     </Link>
                   </li>
                 </ul>
@@ -150,6 +171,70 @@ function Navbar() {
           </div>
         </div>
       </nav>
+
+      {/* <Routes>
+        <Route
+          exact
+          path="/"
+          element={
+            <div className="App container">
+              <Adminfooter />
+            </div>
+          }
+        />
+      </Routes> */}
+
+      {/* <div>
+        <footer className="footer-distributed bg-dark">
+          <div className="footer-left">
+            <h3>
+              <span>HRMS</span>
+            </h3>
+
+            <p className="footer-links">
+              <a href="#" className="link-1">
+                Home
+              </a>
+
+              <a href="#">Blog</a>
+
+              <a href="#">About</a>
+
+              <a href="#">Contact</a>
+            </p>
+
+            <p className="footer-company-name">HRMS</p>
+          </div>
+
+          <div className="footer-center">
+            <div>
+              <i className="fa fa-map-marker"></i>
+              <p>
+                <span>Address</span>
+              </p>
+            </div>
+
+            <div>
+              <i className="fa fa-phone"></i>
+              <p>ph. no</p>
+            </div>
+
+            <div>
+              <i className="fa fa-envelope"></i>
+              <p>
+                <a href="mailto:mail">mail</a>
+              </p>
+            </div>
+          </div>
+
+          <div className="footer-right">
+            <p className="footer-company-about">
+              <span>About the company</span>
+              description
+            </p>
+          </div>
+        </footer>
+      </div> */}
     </div>
   );
 }

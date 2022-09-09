@@ -1,9 +1,9 @@
 import React from 'react';
-import './Footer.css';
-function Footer() {
+// import { Link, Routes, Route } from 'react-router-dom';
+function adminfooter() {
   return (
     <div>
-      <footer className="footer-distributed">
+      <footer className="footer-distributed bg-dark">
         <div className="footer-left">
           <h3>
             <span>HRMS</span>
@@ -53,7 +53,8 @@ function Footer() {
         </div>
       </footer>
     </div>
+    // </div>
   );
 }
 
-export default Footer;
+export default adminfooter;
