@@ -27,6 +27,16 @@ export const adminLoginApi = async (loginData) => {
   }
 };
 
+export const employeeLoginApi = async (loginData) => {
+  try {
+    const res = await base.post('/user/employee-login', loginData);
+    return res;
+  } catch (error) {
+    const res = error.response;
+    return res;
+  }
+};
+
 export const getAllUsersApi = async (skip, limit) => {
   try {
     const res = await base.get(`/user/get-all-users/${skip}/${limit}`);
