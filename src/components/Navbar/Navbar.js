@@ -20,6 +20,8 @@ import {
   FaMandalorian
 } from 'react-icons/fa';
 function Navbar() {
+  var currentUser = localStorage.getItem('Profile');
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark">
@@ -133,7 +135,7 @@ function Navbar() {
                 <ul className="navbar-nav me-auto">
                   <li className="nav">
                     <Link className="nav-link active" to="/login">
-                      login
+                      {currentUser === null ? 'login' : 'logout'}
                     </Link>
                   </li>
                 </ul>
