@@ -94,6 +94,9 @@ function Userdetails() {
                           className="form-control form-control-lg"
                           required
                         />
+                        <button type="button" className="btn btn-sm btn-dark">
+                          Submit
+                        </button>
                       </div>
                     </div>
                   </div>
