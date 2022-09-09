@@ -30,7 +30,9 @@ function Login() {
           localStorage.setItem('Profile', JSON.stringify(res.data));
           navigate('/');
         } else if (res.status === 400) {
-          window.alert('Invalid username or password');
+          window.alert('Invalid credentials');
+        } else if (res.status === 401) {
+          window.alert('User is not an employee');
         } else if (res.status === 404) {
           window.alert("User doesn't hold admin authority");
         }
