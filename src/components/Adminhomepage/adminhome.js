@@ -5,7 +5,7 @@ import './adminhome.css';
 import Login from '../Login/login';
 import User from '../User/userregister';
 // import Button3 from '../Button3/button3';
-import Button4 from '../Button4/button4';
+// import Button4 from '../Button4/button4';
 import Button5 from '../Button5/button5';
 import Button6 from '../Button6/button6';
 import Button7 from '../Button7/button7';
@@ -13,6 +13,7 @@ import Bulkadd from '../Bulkadd/bulkadd';
 import Employees from '../Employees/Employees';
 import Holidays from '../Holidays/Holidays';
 import Userdetails from '../Userdetails/Userdetails';
+import Calendar from '../Calendar/Calendar';
 import {
   FaAtlassian,
   FaBlackberry,
@@ -77,11 +78,11 @@ function Navbar() {
               </Routes>
             </li>
             <li>
-              <Link className="menu__item" to="/button4">
+              <Link className="menu__item" to="/Calendar">
                 <FaDrupal /> Button-4
               </Link>
               <Routes>
-                <Route path="/button4" component={<Button4 />}></Route>
+                <Route path="/Calendar" component={<Calendar />}></Route>
               </Routes>
             </li>
             <li>
