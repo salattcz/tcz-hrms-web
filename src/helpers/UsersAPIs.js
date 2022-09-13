@@ -56,3 +56,13 @@ export const getUserApi = async (employeeId) => {
     return res;
   }
 };
+
+export const updateUser = async (userData) => {
+  try {
+    const res = await base.patch('/user/updateUserByAdmin', userData);
+    console.log(res);
+    return res;
+  } catch (error) {
+    console.log(error);
+  }
+};

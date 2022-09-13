@@ -84,7 +84,7 @@ function Userdetails() {
                           </div>
                         </div>
                       </div>
-                      {<EditProfileModal />}
+                      {<EditProfileModal userId={userId} />}
                     </div>
                   </div>
                 </div>
