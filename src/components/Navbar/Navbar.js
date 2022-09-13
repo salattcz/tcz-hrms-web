@@ -21,6 +21,8 @@ import {
 } from 'react-icons/fa';
 function Navbar() {
   var currentUser = localStorage.getItem('Profile');
+  const userData = JSON.parse(currentUser);
+  const employeeId = userData?.result?._id;
 
   return (
     <div>
@@ -32,8 +34,8 @@ function Navbar() {
           </label>
           <ul className="menu__box">
             <li>
-              <Link className="menu__item" to="/button1">
-                <FaAtlassian /> Button-1
+              <Link className="menu__item" to={`/Userdetails/${employeeId}`}>
+                <FaAtlassian /> My Profile
               </Link>
               <Routes>
                 <Route path="/button1" component={<Ham />}></Route>
